@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h2>📘 Student Task Manager</h2>
+    <span>Stay organized. Achieve more.</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h1>My Daily Tasks</h1>
+      <p>Plan your day and track your progress.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span>Total Tasks</span>
+        <h2 id="total">0</h2>
+      </div>
+      <div class="stat">
+        <span>Pending</span>
+        <h2 id="pending">0</h2>
+      </div>
+      <div class="stat">
+        <span>Completed</span>
+        <h2 id="completed">0</h2>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 id="formTitle">Add a New Task</h2>
+      <form id="taskForm">
+        <input id="taskTitle" type="text"
+          placeholder="Enter task title" required maxlength="120">
+        <textarea id="taskDescription"
+          placeholder="Description (optional)" rows="3"></textarea>
+        <div class="form-row">
+          <input id="taskDate" type="date">
+          <select id="taskPriority">
+            <option value="Medium">Medium Priority</option>
+            <option value="High">High Priority</option>
+            <option value="Low">Low Priority</option>
+          </select>
+        </div>
+        <button type="submit" id="submitBtn">+ Add Task</button>
+        <button type="button" id="cancelEdit" class="secondary hidden">
+          Cancel Edit
+        </button>
+      </form>
+    </section>
+
+    <section class="task-section">
+      <div class="task-heading">
+        <h2>Your Tasks</h2>
+        <select id="filter">
+          <option value="All">All Tasks</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+      <div id="taskList"></div>
+    </section>
+  </main>
+
+  <footer>Student Task Manager · Learn. Plan. Succeed.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
